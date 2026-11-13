@@ -1,0 +1,59 @@
+{
+  "name": "hands-on-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "prestart": "npm run docs:gen",
+    "dev": "tsx watch src/index.ts",
+    "predev": "npm run docs:gen",
+    "docs:gen": "tsx src/docs/swagger.ts"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.3",
+    "drizzle-orm": "^1.0.0-rc.5-5935859",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mssql": "^11.0.2",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/mssql": "^9.1.11",
+    "@types/node": "^26.6.2",
+    "@types/swagger-ui-express": "^4.1.8",
+    "drizzle-kit": "^1.0.0-rc.5-5935859",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "allowScripts": {
+    "express@5.2.1": true,
+    "mssql@11.0.2": true,
+    "dotenv@18.0.3": true,
+    "drizzle-orm@1.0.0-rc.5-5935859": true,
+    "swagger-ui-express@5.0.1": true,
+    "swagger-autogen@2.23.7": true,
+    "typescript@7.0.2": true,
+    "@types/express@5.0.6": true,
+    "@types/mssql@9.1.11": true,
+    "@types/node@26.6.2": true,
+    "tsx@4.23.15": true,
+    "drizzle-kit@1.0.0-rc.5-5935859": true,
+    "@types/swagger-ui-express@4.1.8": true,
+    "zod@3.25.76": true,
+    "jsonwebtoken@9.0.3": true,
+    "bcryptjs@3.0.3": true,
+    "@types/jsonwebtoken@9.0.10": true,
+    "esbuild@0.25.12": true,
+    "esbuild@0.28.2": true,
+    "@scarf/scarf@1.4.0": true
+  }
+}

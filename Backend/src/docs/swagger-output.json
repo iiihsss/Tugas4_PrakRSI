@@ -1,0 +1,505 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Review Kantin API",
+    "version": "1.0.0",
+    "description": ""
+  },
+  "host": "localhost:3000",
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/docs/swagger.json": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/auth/register": {
+      "post": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/auth/me": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/auth/profile": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/stalls/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/stalls/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/stalls/{id}/menus": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/stalls/{id}/reviews": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/admin/reports": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/users/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Daftar user"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CreateUserInput"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "User dibuat"
+          }
+        }
+      }
+    },
+    "/menu-items/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Daftar menu"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CreateMenuItemInput"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Menu dibuat"
+          }
+        }
+      }
+    },
+    "/menu-items/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Detail menu"
+          },
+          "404": {
+            "description": "Tidak ditemukan"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CreateMenuItemInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Menu ter-update"
+          },
+          "404": {
+            "description": "Tidak ditemukan"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Menu terhapus"
+          },
+          "404": {
+            "description": "Tidak ditemukan"
+          }
+        }
+      }
+    },
+    "/reviews/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Daftar review"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CreateReviewInput"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Review dibuat"
+          }
+        }
+      }
+    },
+    "/reviews/{id}": {
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Review terhapus"
+          },
+          "404": {
+            "description": "Tidak ditemukan"
+          }
+        }
+      }
+    },
+    "/likes/": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LikeInput"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Like ditambahkan"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LikeInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Like dihapus"
+          },
+          "404": {
+            "description": "Tidak ditemukan"
+          }
+        }
+      }
+    },
+    "/flags/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Daftar flag"
+          }
+        }
+      }
+    },
+    "/flags/{id}/status": {
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateFlagStatusInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status flag ter-update"
+          },
+          "404": {
+            "description": "Tidak ditemukan"
+          }
+        }
+      }
+    },
+    "/audit-logs/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Daftar audit log"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CreateAuditInput"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Audit log dicatat"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "StallInput": {
+      "type": "object",
+      "properties": {
+        "ownerId": {
+          "type": "number",
+          "example": 2
+        },
+        "name": {
+          "type": "string",
+          "example": "Warung Baru"
+        },
+        "category": {
+          "type": "string",
+          "example": "Nasi"
+        },
+        "location": {
+          "type": "string",
+          "example": "Kantin FK"
+        },
+        "description": {
+          "type": "string",
+          "example": ""
+        }
+      },
+      "required": [
+        "ownerId",
+        "name"
+      ]
+    }
+  }
+}
